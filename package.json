@@ -1,0 +1,48 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "author": "",
+  "license": "",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "seed-database": "node db/seed.js",
+    "start": "nodemon server/server.js",
+    "start:debug": "node --inspect server/server.js",
+    "start:server-test": "PORT=3001 node server/server.js &",
+    "test": "jest unit",
+    "test:integration-manually": "PORT=3001 node server/server.js & jest integration ; kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $2}')",
+    "test:integration": "PORT=3001 node server/server.js & jest integration",
+    "test:unit": "PORT=3001 node server/server.js & jest unit",
+    "stop:server-test": "kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $2}')",
+    "build": "webpack -d",
+    "build:react": "webpack -d --watch"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-env": "^2.4.1",
+    "babel-loader": "^7.1.2",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^22.4.0",
+    "node-sass": "^4.7.2",
+    "puppeteer": "^1.1.0",
+    "sass": "^1.0.0-beta.5.2",
+    "sass-loader": "^6.0.6",
+    "superagent": "^3.8.2",
+    "supertest": "^3.0.0"
+  }
+}
