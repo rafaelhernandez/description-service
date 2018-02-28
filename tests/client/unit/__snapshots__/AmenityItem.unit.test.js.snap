@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmenityItem should render correctly 1`] = `
+<div
+  className="div-description-amenity-item"
+>
+  <div
+    className="div-description-characteristics-block"
+  >
+    <div
+      className="div-description-characteristics-item"
+    >
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <span
+          className="div-description-characteristics-table-cell-margin"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": undefined,
+            }
+          }
+        />
+      </div>
+      <div
+        className="div-description-characteristics-amenity-cell"
+      >
+        mockAmenity1
+      </div>
+    </div>
+  </div>
+</div>
+`;

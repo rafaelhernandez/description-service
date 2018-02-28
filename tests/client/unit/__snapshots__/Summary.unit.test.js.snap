@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary should render correctly 1`] = `
+<div
+  className="div-description-summary"
+/>
+`;

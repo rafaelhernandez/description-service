@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactHost should render correctly 1`] = `
+<div
+  className="div-description-contact-host"
+>
+  <p>
+    <a
+      className="a-description-fold"
+      href="#"
+    >
+      Contact Host
+    </a>
+  </p>
+</div>
+`;

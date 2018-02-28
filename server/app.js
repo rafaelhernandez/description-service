@@ -3,8 +3,11 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const roomsRouter = require('./rooms-router.js');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const app = express();
+mongoose.connect('mongodb://localhost/airbnb_descriptions');
+
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
