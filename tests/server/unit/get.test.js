@@ -6,7 +6,7 @@ jest.mock('../../../db/model.js');
 
 describe('Test the root path', () => {
 
-    test('It should response to the GET method', async () => {
+    test('It should reply to the GET method', async () => {
         const response = await request(app).get('/');
         expect(response.statusCode).toBe(200);
     });
@@ -22,8 +22,8 @@ describe('Test the root path', () => {
       expect(response.statusCode).toBe(404);
     });
 
-    test('It should reply to GET /rooms/roomId with JSON', async () => {
-      const response = await request(app).get('/rooms/1');
+    test('It should reply to GET /rooms/roomId/description with JSON', async () => {
+      const response = await request(app).get('/rooms/1/description');
       expect(response.statusCode).toBe(200);
       expect(response.res.headers['content-type']).toMatch(/json/);
     });

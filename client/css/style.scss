@@ -1,0 +1,167 @@
+body {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  color: rgb(3, 21, 13);
+}
+
+.div-description-description {
+  color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+  line-height: 22px;
+}
+
+.div-description-body {
+  padding-left: 8px;
+  padding-right: 8px;
+  min-height: 1px;
+  position: relative;
+}
+
+.div-description-property-type {
+  text-transform: uppercase;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: 700;
+  display: inline;
+}
+
+.div-description-name {
+  font-weight: 700;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: #484848;
+}
+
+.div-description-city {
+  color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  margin: 0px 0px 16px 0px;
+  word-wrap: break-word;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+}
+
+.div-description-characteristics-block {
+  display: inline-block;
+}
+
+.div-description-characteristics-item {
+  display: table;
+  margin-right: 36px;
+}
+
+.div-description-characteristics-table-cell-margin {
+  margin-right: 8px;
+}
+
+.div-description-characteristics-table-cell {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.div-description-characteristics-amenity-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.div-description-summary {
+  min-height: 1px;
+  margin: 16px 0px 16px 0px;
+  position: relative;
+}
+
+.div-description-guests,
+.div-description-bedrooms,
+.div-description-beds,
+.div-description-bathrooms {
+  color: #484848;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  margin: 8px;
+  word-wrap: break-word;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  display: inline;
+}
+
+.div-description-hide-fold {
+  padding: 16px 0px 0px, 0px;
+  display: block;
+}
+
+.a-description-fold {
+    color: #008489;
+    font: inherit;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+    text-align: left;
+}
+
+.div-description-separator-margin {
+  margin-top:24px;
+  margin-bottom:24px;
+  display: block;
+}
+
+.div-description-separator-separator {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.div-description-house-rules-acknowledge,
+.div-description-space-header {
+  margin: 16px 0px 16px 0px;
+  font-weight: 500;
+}
+
+.div-description-section-header {
+    color: #484848;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    margin: 16px 0px 16px 0px;
+    word-wrap: break-word;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    display: block;
+}
+
+@media (min-width: 1128px) {
+  .div-description-body {
+      width: 58.333333333333336%;
+      float: left;
+  }
+  .div-description-summary-block {
+    width: 100%;
+    float: left;
+  }
+}

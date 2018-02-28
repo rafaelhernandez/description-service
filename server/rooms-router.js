@@ -2,9 +2,9 @@ const express = require('express');
 const db = require('../db/model.js');
 const router = express.Router();
 
-router.route('/:roomid')
+router.route('/:roomid/description')
   .get((req, res, next) => {
-    db.findOne(req.params.roomid)
+    db.findOne(+req.params.roomid)
       .then((doc) => {
         res.json(doc);
       })

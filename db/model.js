@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Promise = require('bluebird');
+var mongoose = require('mongoose');
+var Promise = require('bluebird');
+mongoose.Promise = require('bluebird');
 
-mongoose.Promise = Promise;
+mongoose.connect('mongodb://localhost/airbnb_descriptions');
+
 
 // User schema
 const UserSchema = mongoose.Schema(
@@ -85,6 +87,12 @@ const DescriptionSchema = mongoose.Schema(
     "price_for_extra_person_native": Number,
     "property_type_id": Number,
     "public_address": String,
+    "require_guest_phone_verification": Boolean,
+    "requires_license": Boolean,
+    "license": String,
+    "security_deposit_formatted": String,
+    "security_deposit_native": Number,
+    "security_price_native": Number,
     "space": String,
     "square_feet": Number,
     "star_rating": Number,
@@ -98,10 +106,11 @@ const DescriptionSchema = mongoose.Schema(
   }
 );
 
-const DescriptionModel = mongoose.model('Description', DescriptionSchema);
+var DescriptionModel = mongoose.model('description', DescriptionSchema);
 
 function findOne(roomId) {
-  return DescriptionModel.find({id: roomId})
+  return DescriptionModel
+    .findOne({id: roomId})
     .lean()
     .exec();
 }

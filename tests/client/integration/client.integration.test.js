@@ -27,19 +27,8 @@ describe('search function', () => {
   });
 
   test('initial text is correct', async () => {
-    var div = '.div-app';
-    const title = await page.$eval(div, e => e.textContent);
-    expect(title).toEqual('App goes here');
+    var div = '.div-description-app';
+    const content = await page.$eval(div, e => e.textContent);
+    expect(content).toMatch(/ENTIRE HOUSE/);
   });
-
-  // test('can search for cats', async () => {
-  //   var selector = 'input.form-control[type=text]';
-  //   await page.click(selector);
-  //   await page.type(selector, 'cats');
-  //   await page.waitFor(2000);
-  //   var div = '.video-player-details h3';
-  //   const title = await page.$eval(div, e => e.textContent);
-  //   expect(title).toEqual('CATS will make you LAUGH YOUR HEAD OFF - Funny CAT compilation');
-  // });
-
 });
