@@ -6,7 +6,7 @@ jest.mock('../../../db/model.js');
 
 describe('Test the root path', () => {
 
-    test('It should response to the GET method', async () => {
+    test('It should reply to the GET method', async () => {
         const response = await request(app).get('/');
         expect(response.statusCode).toBe(200);
     });

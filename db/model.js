@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 var Promise = require('bluebird');
 mongoose.Promise = require('bluebird');
 
+mongoose.connect('mongodb://localhost/airbnb_descriptions');
+
+
 // User schema
 const UserSchema = mongoose.Schema(
   {
