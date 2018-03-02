@@ -1,25 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import Description from './Description.jsx';
+import descriptionSample from '../../../db/data/description_sample.js';
+import '../../css/style.scss';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       roomId: props.roomId,
-      description: {}
+      description: descriptionSample
     }
   }
 
   componentDidMount() {
     this.props.roomId
+    this.getDescriptionForRoom(this.props.roomId);
   }
 
   getDescriptionForRoom(roomId) {
-    axios.get(`/room/${roomId}`)
+    axios.get(`/rooms/${roomId}/description`)
       .then((desc) => {
         this.setState({
-          description: desc
+          description: desc.data
         });
       })
       .catch(err => console.log('Error retrieving room ', roomId));
@@ -27,11 +31,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="div-app">
-        App goes here
+      <div className="div-description-app">
+        <Description desc={this.state}></Description>
       </div>
     );
   }
 }
 
-ReactDOM.render(<App roomId="2736358"></App>, document.getElementById('app'));
+export default App;

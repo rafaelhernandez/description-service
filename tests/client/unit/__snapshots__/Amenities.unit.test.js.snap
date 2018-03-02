@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Amenities should render correctly 1`] = `
+<div
+  className="div-description-amenities"
+>
+  <div
+    className="div-description-section-header"
+  >
+    Amenities
+  </div>
+  <div
+    className="div-description-amenities-items"
+  >
+    <AmenityItem
+      amenity="TV"
+      key="0"
+    />
+    <AmenityItem
+      amenity="Cable TV"
+      key="1"
+    />
+    <AmenityItem
+      amenity="Wifi"
+      key="2"
+    />
+    <AmenityItem
+      amenity="Pets live on this property"
+      key="3"
+    />
+    <AmenityItem
+      amenity="Indoor fireplace"
+      key="4"
+    />
+    <AmenityItem
+      amenity="Heating"
+      key="5"
+    />
+    <AmenityItem
+      amenity="Family/kid friendly"
+      key="6"
+    />
+    <AmenityItem
+      amenity="Washer"
+      key="7"
+    />
+    <AmenityItem
+      amenity="Dryer"
+      key="8"
+    />
+    <AmenityItem
+      amenity="Smoke detector"
+      key="9"
+    />
+    <AmenityItem
+      amenity="Carbon monoxide detector"
+      key="10"
+    />
+    <AmenityItem
+      amenity="Essentials"
+      key="11"
+    />
+    <AmenityItem
+      amenity="Hangers"
+      key="12"
+    />
+    <AmenityItem
+      amenity="Hair dryer"
+      key="13"
+    />
+    <AmenityItem
+      amenity="Iron"
+      key="14"
+    />
+    <AmenityItem
+      amenity="Laptop friendly workspace"
+      key="15"
+    />
+    <AmenityItem
+      amenity="Private living room"
+      key="16"
+    />
+    <AmenityItem
+      amenity="Private entrance"
+      key="17"
+    />
+    <AmenityItem
+      amenity="Bathtub"
+      key="18"
+    />
+    <AmenityItem
+      amenity="Hot water"
+      key="19"
+    />
+    <AmenityItem
+      amenity="Coffee maker"
+      key="20"
+    />
+    <AmenityItem
+      amenity="Refrigerator"
+      key="21"
+    />
+    <AmenityItem
+      amenity="Dishes and silverware"
+      key="22"
+    />
+    <AmenityItem
+      amenity="Oven"
+      key="23"
+    />
+    <AmenityItem
+      amenity="Garden or backyard"
+      key="24"
+    />
+    <AmenityItem
+      amenity="Hot water kettle"
+      key="25"
+    />
+  </div>
+</div>
+`;

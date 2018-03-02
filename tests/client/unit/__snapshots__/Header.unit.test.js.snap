@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render correctly 1`] = `
+<div
+  className="div-description-header"
+>
+  <div
+    className="div-description-property-type"
+  >
+    ENTIRE HOUSE
+  </div>
+  <div
+    className="div-description-name"
+  >
+    Garden Retreat steps from Haight St
+  </div>
+  <div
+    className="div-description-city"
+  >
+    San Francisco
+  </div>
+  <div
+    className="div-description-user-thumbnail_url"
+  />
+  <div
+    className="div-description-characteristics-block"
+  >
+    <div
+      className="div-description-characteristics-item"
+    >
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <i
+          className="fas fa-users"
+        />
+      </div>
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <div
+          className="div-description-guests"
+        >
+          3 guests
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="div-description-characteristics-block"
+  >
+    <div
+      className="div-description-characteristics-item"
+    >
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <i
+          className="fas fa-home"
+        />
+      </div>
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <div
+          className="div-description-bedrooms"
+        >
+          1 Bedroom
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="div-description-characteristics-block"
+  >
+    <div
+      className="div-description-characteristics-item"
+    >
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <i
+          className="fas fa-bed"
+        />
+      </div>
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <div
+          className="div-description-beds"
+        >
+          2 beds
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="div-description-characteristics-block"
+  >
+    <div
+      className="div-description-characteristics-item"
+    >
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <i
+          className="fas fa-bath"
+        />
+      </div>
+      <div
+        className="div-description-characteristics-table-cell"
+      >
+        <div
+          className="div-description-bathrooms"
+        >
+          1 bath
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
