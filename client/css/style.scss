@@ -1,61 +1,116 @@
+
+$font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+$color: #484848;
+
+%div-description-common-font {
+  color: $color;
+  font-family: $font-family;
+}
+
+%div-description-common-light-font {
+  @extend %div-description-common-font;
+  font-weight: 300;
+}
+
+%div-description-common-normal-font {
+  @extend %div-description-common-font;
+  font-weight: normal;
+}
+
+%div-description-common-bold-font {
+  @extend %div-description-common-font;
+  font-weight: 700;
+}
+
+%div-description-light-font {
+  @extend %div-description-common-light-font;
+  word-wrap: break-word;
+}
+
+%div-description-normal-font {
+  @extend %div-description-common-normal-font;
+  word-wrap: break-word;
+}
+
+%div-description-bold-font {
+  @extend %div-description-common-bold-font;
+  word-wrap: break-word;
+}
+
+%div-description-common-font-size {
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+}
+
+%div-description-common {
+  @extend %div-description-common-light-font;
+  @extend %div-description-common-font-size;
+}
+
+%div-description-common-word-wrap {
+  @extend %div-description-common;
+  word-wrap: break-word;
+}
+
+%div-description-separator-separator-line {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+@mixin padding-horizontal($len) {
+  padding-left: $len;
+  padding-right: $len;
+}
+
+@mixin padding-vertical($len) {
+  padding-top: $len;
+  padding-bottom: $len;
+}
+
+@mixin margin-vertical($len) {
+  margin-top: $len;
+  margin-bottom: $len;
+}
+
+
 body {
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-family: $font-family;
   color: rgb(3, 21, 13);
 }
 
 .div-description-description {
-  color: #484848;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-  font-size: 17px;
-  font-weight: 300;
-  letter-spacing: 0.2px;
-  line-height: 22px;
+  @extend %div-description-common;
 }
 
 .div-description-body {
-  padding-left: 8px;
-  padding-right: 8px;
+  @include padding-horizontal(8px);
   min-height: 1px;
   position: relative;
 }
 
 .div-description-property-type {
+  @extend %div-description-bold-font;
+  display: inline;
   text-transform: uppercase;
-  margin: 0px;
-  word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.2px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #484848;
-  font-weight: 700;
-  display: inline;
+  margin: 0px;
+  @include padding-vertical(0px);
 }
 
 .div-description-name {
-  font-weight: 700;
-  margin: 0px;
-  word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  @extend %div-description-bold-font;
   font-size: 36px;
   line-height: 40px;
   letter-spacing: -0.6px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  color: #484848;
+  margin: 0px;
+  @include padding-horizontal(6px);
 }
 
 .div-description-city {
-  color: #484848;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  @extend %div-description-common-word-wrap;
   margin: 0px 0px 16px 0px;
-  word-wrap: break-word;
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: 0.2px;
-  font-weight: 300;
 }
 
 .div-description-characteristics-block {
@@ -91,14 +146,8 @@ body {
 .div-description-bedrooms,
 .div-description-beds,
 .div-description-bathrooms {
-  color: #484848;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  @extend %div-description-common-word-wrap;
   margin: 8px;
-  word-wrap: break-word;
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: 0.2px;
-  font-weight: 300;
   display: inline;
 }
 
@@ -109,66 +158,58 @@ body {
 
 .a-description-fold {
     color: #008489;
+    font-family: $font-family;
     font: inherit;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
     text-decoration: none;
+    border: 0px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background: transparent;
-    border: 0px;
     cursor: pointer;
-    margin: 0px;
-    padding: 0px;
     -webkit-user-select: auto;
     -moz-user-select: auto;
     -ms-user-select: auto;
     user-select: auto;
     text-align: left;
+    margin: 0px;
+    padding: 0px;
 }
 
 .div-description-separator-margin {
-  margin-top:24px;
-  margin-bottom:24px;
+  @include margin-vertical(24px);
   display: block;
 }
 
 .div-description-separator-separator {
-  border-bottom: 1px solid #DBDBDB;
+  @extend %div-description-separator-separator-line;
 }
 
 .div-description-separator-short-separator {
   width: 80px;
-  border-bottom: 1px solid #DBDBDB;
+  @extend %div-description-separator-separator-line;
 }
 
 .div-description-house-rules-acknowledge,
 .div-description-space-header {
-  margin: 16px 0px 16px 0px;
   font-weight: 500;
+  margin: 16px 0px 16px 0px;
 }
 
 .div-description-amenities-right,
 .div-description-amenities-left {
-    padding-left: 8px;
-    padding-right: 8px;
+    @include padding-horizontal(8px);
     min-height: 1px;
     position: relative;
     width: 50%;
     float: left;
 }
 
-
 .div-description-section-header {
-    color: #484848;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-    margin: 16px 0px 16px 0px;
-    word-wrap: break-word;
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: 0.2px;
-    font-weight: 700;
-    display: block;
+  @extend %div-description-bold-font;
+  @extend %div-description-common-font-size;
+  margin: 16px 0px 16px 0px;
+  display: block;
 }
 
 .modal-description-amenities-container {
@@ -202,52 +243,39 @@ body {
 
 .button-description-modal-close {
   border: 3px solid #DBDBDB;
-  padding: 8px;
-  text-decoration: none;
   display: inline-block;
-  margin-bottom: 8px;
+  text-decoration: none;
   border-radius: 50%;
+  margin-bottom: 8px;
+  padding: 8px;
 }
 
 .div-description-modal-amenities-title {
-  font-weight: 700;
-  margin: 8px 0px 24px 0px;
-  word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  @extend %div-description-bold-font;
   font-size: 28px;
   line-height: 32px;
   letter-spacing: -0.6px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  color: #484848;
+  margin: 8px 0px 24px 0px;
+  @include padding-vertical(2px);
 }
 
 .div-description-modal-amenities-category {
-  font-weight: normal;
-  margin: 0px;
-  word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  @extend %div-description-normal-font;
   font-size: 22px;
   line-height: 28px;
   letter-spacing: -0.2px;
-  padding-top: 0px;
-  padding-bottom: 0px;
   margin-top: 36px;
   margin-bottom: 24px;
-  color: #484848;
+  @include padding-vertical(0px);
 }
 
 .div-description-modal-amenities-name {
-  margin: 0px;
-  word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  @extend %div-description-light-font;
   font-size: 19px;
   line-height: 24px;
   letter-spacing: undefined;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #484848;
-  font-weight: 300;
+  margin: 0px;
+  @include padding-vertical(0px);
 }
 
 
