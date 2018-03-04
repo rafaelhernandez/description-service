@@ -14,10 +14,10 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'index.jsx'),
+  entry: path.join(paths.JS, 'AppDescription.jsx'),
   output: {
     path: paths.DIST,
-    filename: 'app.bundle.js',
+    filename: 'app-description.bundle.js',
   },
   // Tell webpack to use html plugin
   plugins: [

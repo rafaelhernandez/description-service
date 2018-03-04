@@ -1,67 +1,47 @@
 import React from 'react';
 const MAX_TEXT_LENGTH = 130;
-function ShowAllText(props) {
-  return (
-    <div>
-      {props.cancellation}
-    </div>
-  )
-}
 
-function EllipseText(props) {
-  return (
-    <div>
-      {props.cancellation}<span>&hellip;</span><span className="a-description-fold" onClick={props.onClick}>Read more</span>
-    </div>
-  )
-}
+const ShowAllText = props => (
+  <div>
+    {props.cancellation}
+  </div>
+);
+
+const EllipseText = props => (
+  <div>
+    {props.cancellation}<span>&hellip;</span><span className="a-description-fold" onClick={props.onClick}>Read more</span>
+  </div>
+);
 
 class Cancellations extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      ellipse: true,
-      cancellationText: ''
-    };
     this.readMoreClick = this.readMoreClick.bind(this);
     this.policies = {
-      flexible: 'Cancel up to 24 hours before check in and get a full refund (minus service fees). Cancel within 24 hours of your trip and the first night is non-refundable. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.'
+      flexible: 'Cancel up to 24 hours before check in and get a full refund (minus service fees). Cancel within 24 hours of your trip and the first night is non-refundable. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.',
+      moderate: 'Cancel up to 5 days before check in and get a full refund (minus service fees). Cancel within 5 days of your trip and the first night is non-refundable, but 50% of the cost for the remaining nights will be refunded. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.',
+      strict: 'Cancel up to 7 days before check in and get a 50% refund (minus service fees). Cancel within 7 days of your trip and the reservation is non-refundable. Service fees are refunded when cancellation happens before check in and within 48 hours of booking.'
     };
-  }
-
-  componentDidMount() {
-    this.cancellationExplanation(this.props.cancellationPolicy);
-  }
-
-  cancellationExplanation(cancellationPolicy) {
-    if (this.policies[cancellationPolicy].length > MAX_TEXT_LENGTH) {
-      this.setState({
-        ellipse: true,
-        cancellationText: this.policies[cancellationPolicy].slice(0, MAX_TEXT_LENGTH)
-      });
-    } else {
-      this.setState({
-        ellipse: false,
-        cancellationText: this.policies[cancellationPolicy]
-      });
-    }
+    this.state = {
+      ellipse: true
+    };
   }
 
   readMoreClick() {
     this.setState({
       ellipse: false,
-      cancellationText: this.policies[this.props.cancellationPolicy]
     });
   }
 
-
   render() {
+    let cancellationText = this.policies[this.props.cancellationPolicy];
     let text;
-    if (this.state.ellipse) {
-      text = <EllipseText cancellation={this.state.cancellationText} onClick={this.readMoreClick}></EllipseText>;
+    if (this.state.ellipse && this.policies[this.props.cancellationPolicy].length > MAX_TEXT_LENGTH) {
+      cancellationText = this.policies[this.props.cancellationPolicy].slice(0, MAX_TEXT_LENGTH);
+      text = <EllipseText cancellation={cancellationText} onClick={this.readMoreClick}></EllipseText>;
     } else {
-      text = <ShowAllText cancellation={this.state.cancellationText}></ShowAllText>;
-    };
+      text = <ShowAllText cancellation={cancellationText}></ShowAllText>;
+    }
 
     return (
       <div className="div-description-cancellations">
