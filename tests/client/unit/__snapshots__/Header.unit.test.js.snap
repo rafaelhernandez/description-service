@@ -10,18 +10,39 @@ exports[`Header should render correctly 1`] = `
     ENTIRE HOUSE
   </div>
   <div
-    className="div-description-name"
+    className="div-description-title-user"
   >
-    Garden Retreat steps from Haight St
+    <div
+      className="div-description-title"
+    >
+      <div
+        className="div-description-name"
+      >
+        Garden Retreat steps from Haight St
+      </div>
+      <div
+        className="div-description-city"
+      >
+        San Francisco
+      </div>
+    </div>
+    <div
+      className="div-description-thumbnail-pic"
+    >
+      <ThumbnailPicture
+        user={
+          Object {
+            "_id": "5a8f538bc5170fb98f9bb282",
+            "first_name": "Sara",
+            "has_profile_pic": true,
+            "id": 8638224,
+            "languages": Array [],
+            "thumbnail_url": "https://a0.muscache.com/im/users/8638224/profile_pic/1378336598/original.jpg?aki_policy=profile_small",
+          }
+        }
+      />
+    </div>
   </div>
-  <div
-    className="div-description-city"
-  >
-    San Francisco
-  </div>
-  <div
-    className="div-description-user-thumbnail_url"
-  />
   <div
     className="div-description-characteristics-block"
   >
