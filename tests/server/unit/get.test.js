@@ -23,7 +23,7 @@ describe('Test the root path', () => {
     });
 
     test('It should reply to GET /rooms/roomId/description with JSON', async () => {
-      const response = await request(app).get('/rooms/1/description');
+      const response = await request(app).get('/api/rooms/1/description');
       expect(response.statusCode).toBe(200);
       expect(response.res.headers['content-type']).toMatch(/json/);
     });
