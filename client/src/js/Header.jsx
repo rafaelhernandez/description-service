@@ -1,11 +1,18 @@
 import React from 'react';
+import ThumbnailPicture from './ThumbnailPicture.jsx';
 
 const Header = (props) => (
   <div className="div-description-header">
     <div className="div-description-property-type">{props.desc.room_type_category === 'entire_home' ? ('Entire ' + props.desc.property_type).toUpperCase() : props.desc.property_type.toUpperCase()}</div>
-    <div className="div-description-name">{props.desc.name}</div>
-    <div className="div-description-city">{props.desc.city}</div>
-    <div className="div-description-user-thumbnail_url">{props.desc.user.thumbnail_url}</div>
+    <div className="div-description-title-user">
+      <div className="div-description-title">
+        <div className="div-description-name">{props.desc.name}</div>
+        <div className="div-description-city">{props.desc.city}</div>
+      </div>
+      <div className="div-description-thumbnail-pic">
+        <ThumbnailPicture user={props.desc.user.user}></ThumbnailPicture>
+      </div>
+    </div>
     <div className="div-description-characteristics-block">
       <div className="div-description-characteristics-item">
         <div className="div-description-characteristics-table-cell">

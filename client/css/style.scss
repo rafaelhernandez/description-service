@@ -1,4 +1,3 @@
-
 $font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 $color: #484848;
 
@@ -105,7 +104,6 @@ body {
   line-height: 40px;
   letter-spacing: -0.6px;
   margin: 0px;
-  @include padding-horizontal(6px);
 }
 
 .div-description-city {
@@ -278,6 +276,37 @@ body {
   @include padding-vertical(0px);
 }
 
+.div-description-title {
+  min-height: 1px;
+  position: relative;
+}
+
+.div-description-thumbnail-pic {
+  @include padding-horizontal(8px);
+  min-height: 1px;
+  position: relative;
+}
+
+.div-description-user-thumbnail_url {
+  height: 64px;
+  width: 64px;
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.div-description-user-thumbnail-picture {
+  text-align: center;
+}
+
+.div-description-user-first-name {
+  color: #767676;
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 16px;
+  word-wrap: break-word;
+}
 
 @media (min-width: 1128px) {
   .div-description-body {
@@ -286,6 +315,17 @@ body {
   }
   .div-description-summary-block {
     width: 100%;
+    float: left;
+  }
+}
+
+@media (min-width: 744px) {
+  .div-description-title {
+    width: 83.33333333333334%;
+    float: left;
+  }
+  .div-description-thumbnail-pic {
+    width: 16.666666666666664%;
     float: left;
   }
 }
