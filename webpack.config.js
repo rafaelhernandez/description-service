@@ -2,7 +2,7 @@
 // https://nodejs.org/api/path.html
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); //  -> ADDED IN THIS STEP
 
 // Constant with our paths
@@ -14,18 +14,18 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'AppDescription.jsx'),
+  entry: path.join(paths.JS, 'index.jsx'),
   output: {
     path: paths.DIST,
     filename: 'app-description.bundle.js',
   },
   // Tell webpack to use html plugin
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(paths.SRC, 'index.html'),
-    }),
-    new ExtractTextPlugin('style.bundle.css'), // CSS will be extracted to this bundle file -> ADDED IN THIS STEP
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     template: path.join(paths.SRC, 'index.html'),
+  //   }),
+  //   new ExtractTextPlugin('style.bundle.css'), // CSS will be extracted to this bundle file -> ADDED IN THIS STEP
+  // ],
   // Loaders configuration
   // We are telling webpack to use "babel-loader" for .js and .jsx files
   module: {
