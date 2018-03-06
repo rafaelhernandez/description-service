@@ -13,7 +13,7 @@ configure({ adapter: new Adapter() });
 describe('App', () => {
   var mock = new MockAdapter(axios);
   const data = descriptionSample;
-  mock.onGet('/api/rooms/2736358/description').reply(200, data);
+  mock.onGet('http://localhost:3002/api/rooms/2736358/description').reply(200, data);
 
   it ('should render correctly', async () => {
     const output = shallow(

@@ -20,13 +20,16 @@ class AppDescription extends React.Component {
   }
 
   getDescriptionForRoom(roomId) {
-    axios.get(`/api/rooms/${roomId}/description`)
+    axios.get(`http://localhost:3002/api/rooms/${roomId}/description`, { crossdomain: true })
       .then((desc) => {
         this.setState({
           description: desc.data
         });
       })
-      .catch(err => console.log('Error retrieving room ', roomId));
+      .catch(err => {
+        let debug = err;
+        console.log('Error retrieving room ', roomId);
+      });
   }
 
   render() {

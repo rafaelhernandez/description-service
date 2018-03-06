@@ -31,6 +31,9 @@ router.route('/:roomid/description')
         </body>
       </html>
       `);
+  })
+  .options((req, res) => {
+    res.sendStatus(200);
   });
 
 module.exports = router;
