@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Description from './Description.jsx';
 import descriptionSample from '../../../db/data/description_sample.js';
@@ -42,4 +41,4 @@ class AppDescription extends React.Component {
 }
 
 window.AppDescription = AppDescription;
-export default AppDescription = AppDescription;
+export default AppDescription;
