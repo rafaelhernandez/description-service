@@ -14,12 +14,11 @@ class AppDescription extends React.Component {
   }
 
   componentDidMount() {
-    this.props.roomId;
     this.getDescriptionForRoom(this.props.roomId);
   }
 
   getDescriptionForRoom(roomId) {
-    axios.get(`http://localhost:3002/api/rooms/${roomId}/description`, { crossdomain: true })
+    axios.get(`/api/rooms/${roomId}/description`, { crossdomain: true })
       .then((desc) => {
         this.setState({
           description: desc.data
