@@ -8,8 +8,10 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "docker": "node db/seed.js & node server/server.js",
     "seed-database": "node db/seed.js",
-    "start": "nodemon server/server.js",
+    "start:dev": "nodemon server/server.js",
+    "start": "node server/server.js",
     "start:debug": "node --inspect server/server.js",
     "start:server-test": "PORT=3001 node server/server.js &",
     "test": "jest test --forceExit",
@@ -18,7 +20,7 @@
     "test:unit": "jest unit --forceExit",
     "stop:server-test": "kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $2}')",
     "build": "webpack -d",
-    "build:react": "webpack -d --watch"
+    "build:dev": "webpack -d --watch"
   },
   "dependencies": {
     "axios": "^0.18.0",
