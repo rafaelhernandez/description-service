@@ -61,9 +61,7 @@ exports[`Header should render correctly 1`] = `
       >
         <div
           className="div-description-guests"
-        >
-          3 guests
-        </div>
+        />
       </div>
     </div>
   </div>

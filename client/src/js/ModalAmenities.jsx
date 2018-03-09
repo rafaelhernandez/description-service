@@ -61,7 +61,7 @@ class ModalAmenities extends React.Component {
               separator = <div></div>;
             }
             return (
-              <div>
+              <div key={idx}>
                 <div className="div-description-modal-amenities-name">
                   <p>
                     {ele.key}

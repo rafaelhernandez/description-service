@@ -8,19 +8,20 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "docker": "node db/seed.js & node server/server.js",
     "seed-database": "node db/seed.js",
-    "start:dev": "nodemon server/server.js",
-    "start": "node server/server.js",
-    "start:debug": "node --inspect server/server.js",
-    "start:server-test": "PORT=3001 node server/server.js &",
+    "build": "yarn build:client & yarn build:server",
+    "build:server": "webpack -d --config ./webpack.server.config.js --watch",
+    "build:client": "webpack -d --config ./webpack.client.config.js --watch",
+    "start": "node ./dist/server",
+    "start:dev": "nodemon ./dist/server",
+    "debug": "node --inspect dist/server.js",
     "test": "jest test --forceExit",
+    "test:unit": "jest unit --forceExit",
+    "start:server-test": "PORT=3001 node server/server.js &",
     "test:integration-manually": "PORT=3001 node server/server.js & jest integration ; kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $2}')",
     "test:integration": "PORT=3001 node server/server.js & jest integration",
-    "test:unit": "jest unit --forceExit",
     "stop:server-test": "kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $2}')",
-    "build": "webpack -d",
-    "build:dev": "webpack -d --watch"
+    "docker": "node db/seed.js & node dist/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,6 +29,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "identity-obj-proxy": "^3.0.0",
     "mongoose": "^5.0.7",
     "morgan": "^1.9.0",
@@ -37,7 +39,8 @@
     "react-dom": "^16.2.0",
     "react-modal": "^3.3.1",
     "react-router-dom": "^4.2.2",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "webpack-node-externals": "^1.6.0"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.14.0",

@@ -4,7 +4,7 @@ import { Glyphicon } from 'react-bootstrap';
 
 const HiddenSpace = props => (
   <div>
-    <Summary summary={props.desc.summary}></Summary>
+    <Summary summary={props.desc && props.desc.summary}></Summary>
     <div className="div-description-open-fold div-description-separator-margin">
       <a className="a-description-fold" onClick={props.onClick}>Read more about the space <Glyphicon glyph="chevron-down"/></a>
     </div>
@@ -15,7 +15,7 @@ const HiddenSpace = props => (
 const Space = props => (
   <div>
     <div>
-      <Summary summary={props.desc.summary}></Summary>
+      <Summary summary={props.desc && props.desc.summary}></Summary>
       <div className="div-description-space-header">
         The space
       </div>

@@ -14,10 +14,36 @@ exports[`Amenities should render correctly 1`] = `
   >
     <div
       className="div-description-amenities-left"
-    />
+    >
+      <AmenityItem
+        amenity="TV"
+        key="0"
+      />
+      <AmenityItem
+        amenity="Wifi"
+        key="1"
+      />
+      <AmenityItem
+        amenity="Indoor fireplace"
+        key="2"
+      />
+    </div>
     <div
       className="div-description-amenities-right"
-    />
+    >
+      <AmenityItem
+        amenity="Cable TV"
+        key="0"
+      />
+      <AmenityItem
+        amenity="Pets live on this property"
+        key="1"
+      />
+      <AmenityItem
+        amenity="Heating"
+        key="2"
+      />
+    </div>
   </div>
   <div>
     <a
