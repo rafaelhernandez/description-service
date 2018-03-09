@@ -10,37 +10,38 @@ class Amenities extends React.Component {
     this.state = {
       showModal: false
     };
-    this.amenities = [[], []];
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
-
-  componentDidMount() {
-    let num = 0;
-    for (let i = 0; i < this.props.amenities.length; ++i) {
-      if (this.props.amenities[i] in SVGIcons) {
-        this.amenities[num % 2].push(this.props.amenities[i]);
-        ++num;
-      }
-      if (num > 5) {
-        break;
-      }
-    }
-  }
-
+  
   componentWillMount() {
-    ReactModal.setAppElement('body');
+    if (typeof window !== 'undefined') {
+      ReactModal.setAppElement('body');
+    }
   }
 
   handleOpenModal () {
     this.setState({ showModal: true });
   }
-
+  
   handleCloseModal () {
     this.setState({ showModal: false });
   }
-
+  
   render() {
+    this.amenities = [[], []];
+    if (this.props.amenities !== undefined) {
+      let num = 0;
+      for (let i = 0; i < this.props.amenities.length; ++i) {
+        if (this.props.amenities[i] in SVGIcons) {
+          this.amenities[num % 2].push(this.props.amenities[i]);
+          ++num;
+        }
+        if (num > 5) {
+          break;
+        }
+      }
+    }
     return (
       <div className="div-description-amenities">
         <div className="div-description-section-header">
@@ -55,7 +56,7 @@ class Amenities extends React.Component {
           </div>
         </div>
         <div>
-          <a className="a-description-fold" onClick={this.handleOpenModal}>Show all {this.props.amenities.length} amenities</a>
+          <a className="a-description-fold" onClick={this.handleOpenModal}>Show all {this.props.amenities && this.props.amenities.length} amenities</a>
           <ReactModal
             isOpen={this.state.showModal}
             className="modal-description-amenities-container"

@@ -10,15 +10,15 @@ import Separator from './Separator.jsx';
 const Description = (props) => (
   <div className="div-description-description">
     <div className="div-description-body">
-      <Header desc={props.desc.description}></Header>
-      <SpaceDescription desc={props.desc.description}></SpaceDescription>
+      <Header desc={props.desc && props.desc.description}></Header>
+      <SpaceDescription desc={props.desc && props.desc.description}></SpaceDescription>
       <ContactHost></ContactHost>
       <Separator></Separator>
-      <Amenities amenities={props.desc.description.amenities}></Amenities>
+      <Amenities amenities={props.desc && props.desc.description && props.desc.description.amenities}></Amenities>
       <Separator></Separator>
-      <HouseRules desc={props.desc.description}></HouseRules>
+      <HouseRules desc={props.desc && props.desc.description}></HouseRules>
       <Separator></Separator>
-      <Cancellations cancellationPolicy={props.desc.description.cancellation_policy}></Cancellations>
+      <Cancellations cancellationPolicy={props.desc && props.desc.description && props.desc.description.cancellation_policy}></Cancellations>
       <Separator></Separator>
     </div>
   </div>

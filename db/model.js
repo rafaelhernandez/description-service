@@ -6,8 +6,7 @@ let mongoServer = process.env.MONGO_SERVER || 'localhost';
 console.log('mongoServer', mongoServer);
 let mongoPort = process.env.MONGO_PORT || '27017';
 console.log(`mongodb://${mongoServer}:${mongoPort}/airbnb_descriptions`);
-mongoose.connect(`mongodb://${mongoServer}:${mongoPort}/airbnb_descriptions`);
-
+let connection = mongoose.connect(`mongodb://${mongoServer}:${mongoPort}/airbnb_descriptions`);
 
 // User schema
 const UserSchema = mongoose.Schema(
@@ -126,3 +125,4 @@ function insertOne(description) {
 
 exports.insertOne = insertOne;
 exports.findOne = findOne;
+exports.connection = connection;

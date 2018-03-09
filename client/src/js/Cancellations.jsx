@@ -36,8 +36,8 @@ class Cancellations extends React.Component {
   render() {
     let cancellationText = this.policies[this.props.cancellationPolicy];
     let text;
-    if (this.state.ellipse && this.policies[this.props.cancellationPolicy].length > MAX_TEXT_LENGTH) {
-      cancellationText = this.policies[this.props.cancellationPolicy].slice(0, MAX_TEXT_LENGTH);
+    if (this.state.ellipse && cancellationText && cancellationText.length > MAX_TEXT_LENGTH) {
+      cancellationText = cancellationText.slice(0, MAX_TEXT_LENGTH);
       text = <EllipseText cancellation={cancellationText} onClick={this.readMoreClick}></EllipseText>;
     } else {
       text = <ShowAllText cancellation={cancellationText}></ShowAllText>;
@@ -49,7 +49,7 @@ class Cancellations extends React.Component {
           Cancellations
         </div>
         <div className="div-description-cancellations-type div-description-separator-margin">
-          {this.props.cancellationPolicy.charAt(0).toUpperCase() + this.props.cancellationPolicy.slice(1)}
+          {this.props.cancellationPolicy && (this.props.cancellationPolicy.charAt(0).toUpperCase() + this.props.cancellationPolicy.slice(1))}
         </div>
         {text}
         <div>

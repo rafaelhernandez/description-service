@@ -7,19 +7,23 @@ import '../../css/style.scss';
 class AppDescription extends React.Component {
   constructor(props) {
     super(props);
+    this.desc = {description: props.description};
     this.state = {
       roomId: props.roomId,
-      description: descriptionSample
+      description: props.description
     };
   }
 
   componentDidMount() {
-    this.getDescriptionForRoom(this.props.roomId);
+    if (this.props.roomId) {
+      this.getDescriptionForRoom(this.props.roomId);
+    }
   }
 
   getDescriptionForRoom(roomId) {
     axios.get(`/api/rooms/${roomId}/description`, { crossdomain: true })
       .then((desc) => {
+        this.desc = {description: desc.data};
         this.setState({
           description: desc.data
         });
@@ -33,11 +37,11 @@ class AppDescription extends React.Component {
   render() {
     return (
       <div className="div-description-app">
-        <Description desc={this.state}></Description>
+        <Description desc={this.desc}></Description>
       </div>
     );
   }
 }
 
-window.AppDescription = AppDescription;
+// window.AppDescription = AppDescription;
 export default AppDescription;

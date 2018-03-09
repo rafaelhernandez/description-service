@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const roomsRouter = require('./rooms-router.js');
 const apiRouter = require('./api-router.js');
+// const ssrRouter = require('./ssr-router.js');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
@@ -17,8 +18,9 @@ app.use((req, res, next) => {
   res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
 });
-app.use('/api/rooms', apiRouter);
 app.use('/rooms', roomsRouter);
+app.use('/api/rooms', apiRouter);
+// app.use('/ssr/rooms', ssrRouter);
 
 app.use(express.static(path.resolve('public')));
 
