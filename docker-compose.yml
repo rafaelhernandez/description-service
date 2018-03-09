@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   description:
     environment:
@@ -9,7 +9,7 @@ services:
     build: .
     ports:
       - "3002:3002"
-    links:
+    depends_on:
       - mongo
   mongo:
     container_name: mongo
