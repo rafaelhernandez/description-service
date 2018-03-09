@@ -1,0 +1,18 @@
+version: "3"
+services:
+  description:
+    environment:
+      - MONGO_SERVER=172.18.0.2
+      - MONGO_PORT=27017
+    container_name: description
+    restart: always
+    build: .
+    ports:
+      - "3002:3002"
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo:3.4.13
+    ports:
+      - "27027:27017"

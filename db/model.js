@@ -1,8 +1,12 @@
-var mongoose = require('mongoose');
-var Promise = require('bluebird');
+const mongoose = require('mongoose');
+const Promise = require('bluebird');
 mongoose.Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/airbnb_descriptions');
+let mongoServer = process.env.MONGO_SERVER || 'localhost';
+console.log('mongoServer', mongoServer);
+let mongoPort = process.env.MONGO_PORT || '27017';
+console.log(`mongodb://${mongoServer}:${mongoPort}/airbnb_descriptions`);
+mongoose.connect(`mongodb://${mongoServer}:${mongoPort}/airbnb_descriptions`);
 
 
 // User schema

@@ -1,0 +1,11 @@
+FROM mongo:3.7.2
+
+RUN mkdir -p /src/app
+
+WORKDIR /src/app
+
+COPY . /src/app
+
+RUN npm install node
+
+CMD ["yarn",  "seed-database"]
