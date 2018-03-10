@@ -9,17 +9,10 @@ import AppDescription from '../client/src/js/AppDescription.jsx';
 router
   .route('/:roomid/description')
   .get((req, res, next) => {
-    db
-      .findOne(+req.params.roomid)
-      .then(doc => {
-        res.status(200).json(doc);
-      })
+    db.findOne(+req.params.roomid)
+      .then(doc => res.status(200).json(doc))
       .catch(err => {
-        console.log(
-          'Error retrieving description for room ',
-          req.params.roomid,
-          ' from database'
-        );
+        console.log('Error retrieving description for room ', req.params.roomid, ' from database');
         res.sendStatus(404);
       });
   })
@@ -30,21 +23,10 @@ router
 router
   .route('/:roomid/description/ssr')
   .get((req, res, next) => {
-    db
-      .findOne(+req.params.roomid)
-      .then(desc => {
-        res.send(
-          renderToString(
-            <AppDescription roomId={req.params.roomid} description={desc} />
-          )
-        );
-      })
+    db.findOne(+req.params.roomid)
+      .then(desc => res.send(renderToString(<AppDescription roomId={req.params.roomid} description={desc}/>)))
       .catch(err => {
-        console.log(
-          'Error retrieving description for room ',
-          req.params.roomid,
-          ' from database'
-        );
+        console.log('Error retrieving description for room ', req.params.roomid, ' from database');
         res.sendStatus(404);
       });
   })
