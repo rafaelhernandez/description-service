@@ -68,6 +68,7 @@
     "supertest": "^3.0.0"
   },
   "jest": {
+    "collectCoverage": true,
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
     }
