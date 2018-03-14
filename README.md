@@ -1,39 +1,36 @@
-# Project Name
+# The description Service
 
-> Project description
+Airbnb component to emulate:
+Listing Description
 
-## Related Projects
+### Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+- [Rafa's proxy server](https://github.com/The-Untouchables/proxy-server-rafa)
+- [Photo Carousel](https://github.com/The-Untouchables/photo-carousel-service)
+- [Gallery](https://github.com/The-Untouchables/) - update
+- [Neighborhood](https://github.com/The-Untouchables/neighborhood-map-service)
+- [Booking](https://github.com/The-Untouchables/bookings-widget-service)
+- [Reviews](https://github.com/The-Untouchables/reviews-service)
+- [Similar Listings](https://github.com/The-Untouchables/similar-listings-service)
 
-## Table of Contents
+### Usage
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+The HTML page is found at `/rooms/:roomid/description`
 
-## Usage
+The API endpoint is `/api/rooms/:roomid/description`
 
-> Some usage instructions
+The Server side rendered page is found at `/rooms/:roomid/description/ssr`
 
-## Requirements
+The HTML of the component server side rendered is found at `/api/rooms/:roomid/description/ssr`. This 
+is used in the proxy server
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+### Installation
 
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
+Make sure MongoDB is started. From within the root directory:
 
 ```sh
-npm install -g webpack
-npm install
+$ yarn install
+$ yarn seed-database
+$ yarn build
+$ yarn start
 ```
-
